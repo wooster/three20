@@ -71,7 +71,7 @@ static const CGFloat kDefaultMessageImageHeight = 34;
                                          navigationModeForURL:item.URL];
       if (item.accessoryURL) {
         self.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
-      } else if (navigationMode == TTNavigationModeCreate) {
+      } else if (navigationMode != TTNavigationModeNone) {
         self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
       } else {
         self.accessoryType = UITableViewCellAccessoryNone;
