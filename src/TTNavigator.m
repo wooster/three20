@@ -406,14 +406,14 @@
 - (UIViewController*)openURL:(NSString*)URL parent:(NSString*)parentURL query:(NSDictionary*)query
                      animated:(BOOL)animated transition:(UIViewAnimationTransition)transition {
   return [self openURL:URL parent:parentURL query:query state:nil animated:animated
-               transition:UIViewAnimationTransitionNone withDelay:NO];
+               transition:transition withDelay:NO];
 }
 
 - (UIViewController*)openURL:(NSString*)URL parent:(NSString*)parentURL query:(NSDictionary*)query
                      animated:(BOOL)animated transition:(UIViewAnimationTransition)transition
                      withDelay:(BOOL)withDelay {
   return [self openURL:URL parent:parentURL query:query state:nil animated:animated
-               transition:UIViewAnimationTransitionNone withDelay:withDelay];
+               transition:transition withDelay:withDelay];
 }
 
 - (UIViewController*)openURLs:(NSString*)URL,... {
