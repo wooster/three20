@@ -350,11 +350,11 @@ static const NSTimeInterval kOvershoot = 2;
   if (resetEdges) {
     _pageEdges = _pageStartEdges = UIEdgeInsetsZero;
     _zooming = NO;
-    [self setNeedsLayout];
   } else if (pageIndex != _centerPageIndex) {
     [self adjustPageEdgesForPageAtIndex:pageIndex];
     _zooming = NO;
   }
+  [self setNeedsLayout];
 
   NSInteger indexDiff = pageIndex - _centerPageIndex;
   if (indexDiff) {
