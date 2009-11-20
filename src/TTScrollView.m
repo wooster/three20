@@ -166,8 +166,8 @@ static const NSTimeInterval kOvershoot = 2;
   CGFloat width, height;
   if (UIInterfaceOrientationIsLandscape(_orientation)) {
     if (size.width > size.height) {
-      height = self.height;
-      width = size.height/size.width * self.height;
+      height = size.width/size.height * self.width;
+      width = self.width;
     } else {
       height = size.width/size.height * self.width;
       width = self.width;
@@ -350,11 +350,11 @@ static const NSTimeInterval kOvershoot = 2;
   if (resetEdges) {
     _pageEdges = _pageStartEdges = UIEdgeInsetsZero;
     _zooming = NO;
+    [self setNeedsLayout];
   } else if (pageIndex != _centerPageIndex) {
     [self adjustPageEdgesForPageAtIndex:pageIndex];
     _zooming = NO;
   }
-  [self setNeedsLayout];
 
   NSInteger indexDiff = pageIndex - _centerPageIndex;
   if (indexDiff) {
@@ -1045,12 +1045,12 @@ static const NSTimeInterval kOvershoot = 2;
 // UIDeviceOrientationDidChangeNotification
 
 - (void)deviceOrientationDidChange:(void*)object {
-  UIInterfaceOrientation orientation = TTDeviceOrientation();
-  if (_rotateEnabled && !_holding
-      && (![_delegate respondsToSelector:@selector(scrollView:shouldAutorotateToInterfaceOrientation:)]
-      || [_delegate scrollView:self shouldAutorotateToInterfaceOrientation:orientation])) {
-    self.orientation = orientation;
-  }
+//  UIInterfaceOrientation orientation = TTDeviceOrientation();
+//  if (_rotateEnabled && !_holding
+//      && (![_delegate respondsToSelector:@selector(scrollView:shouldAutorotateToInterfaceOrientation:)]
+//      || [_delegate scrollView:self shouldAutorotateToInterfaceOrientation:orientation])) {
+//    self.orientation = orientation;
+//  }
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
