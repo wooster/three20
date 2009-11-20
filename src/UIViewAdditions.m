@@ -1,7 +1,7 @@
 #import "Three20/TTGlobal.h"
 
 
-// Remove GSEvent and UITouchAddtions from Release builds
+// Remove GSEvent and UITouchAdditions from Release builds
 #ifdef DEBUG
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -309,8 +309,7 @@
 
 - (CGRect)frameWithKeyboardSubtracted:(CGFloat)plusHeight {
   CGRect frame = self.frame;
-  if( TTIsKeyboardVisible() )
-  {
+  if (TTIsKeyboardVisible()) {
     CGRect screenFrame = TTScreenBounds();
     CGFloat keyboardTop = (screenFrame.size.height - (TTKeyboardHeight() + plusHeight));
     CGFloat screenBottom = self.screenY + frame.size.height;
